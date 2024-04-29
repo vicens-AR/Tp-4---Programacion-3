@@ -41,14 +41,33 @@ class Jugador:
         print(f"{self.nombre} ha perdido el premio {premio}")
 
 
+def mostrar_menu():
+    print("1. Actualizar información del jugador")
+    print("2. Calcular promedio de goles")
+    print("3. Verificar si es goleador")
+    print("4. Agregar premio")
+    print("5. Eliminar premio")
+    print("0. Salir")
+
+
 futbolista1 = Jugador("Joaquin", 17, "ST", "San Lorenzo", "Argentina", 33, 276, 520, 23, 45, 0, 1)
 
-print(futbolista1.goles)
-futbolista1.Actualizar_Info()
-print(futbolista1.goles)
-futbolista1.Prom_Goles()
-futbolista1.Es_Goleador()
-futbolista1.Agegar_Premio()
-print(f"{futbolista1.nombre} tiene un total de: {futbolista1.premios} premios ")
-futbolista1.Eliminar_Premio()
-print(f"{futbolista1.nombre} tiene un total de: {futbolista1.premios} premios ")
+while True:
+    mostrar_menu()
+    opcion = input("Ingrese una opción: ")
+
+    if opcion == "1":
+        futbolista1.Actualizar_Info()
+    elif opcion == "2":
+        futbolista1.Prom_Goles()
+    elif opcion == "3":
+        futbolista1.Es_Goleador()
+    elif opcion == "4":
+        futbolista1.Agegar_Premio()
+    elif opcion == "5":
+        futbolista1.Eliminar_Premio()
+    elif opcion == "0":
+        print("Saliendo del programa...")
+        break
+    else:
+        print("Opción inválida. Por favor, ingrese una opción válida.")
